@@ -1,12 +1,20 @@
 from django.contrib import admin
 from .models import *
+from django.contrib.auth.admin import UserAdmin
 
-# Cria a classe MovieAdmin para customizar a exibição da lista de filmes e permitir pesquisa por campo de título ou categoria
+class CustomUserAdmin(UserAdmin):
+    model = CustomUser
+    list_display = ['id','email','cpf']
+    search_fields = ['email','cpf',]
+    ordering = ['email']
+
 class MovieAdmin(admin.ModelAdmin):
-    list_display = ('title', 'category', 'classification')
-    search_fields = ('title', 'category')
-    
-# Registra os modelos no site
-admin.site.register(Movies, MovieAdmin)
-admin.site.register(Plans)
+    list_display = ('title','category', 'classification')
+    search_fields = ('title','category',)
+
+admin.site.register(CustomUser, CustomUserAdmin)
 admin.site.register(Directors)
+admin.site.register(Movies,MovieAdmin)
+admin.site.register(Plans)
+admin.site.register(FavoriteMovie)
+
