@@ -28,8 +28,7 @@ DEBUG = True
 ALLOWED_HOSTS = ['*']
 
 CORS_ALLOW_ALL_ORIGINS = True
-CSRF_TRUSTED_ORIGINS = ['https://manflix-bruno-f5aedufgd4hphse5.westus3-01.azurewebsites.net']
-
+CSRF_TRUSTED_ORIGINS = ['https://back-manflix-bruno-f6f4g8dbdeh3b6cg.westus3-01.azurewebsites.net']
 
 # Application definition
 

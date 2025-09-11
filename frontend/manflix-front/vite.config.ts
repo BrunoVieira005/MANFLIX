@@ -9,7 +9,7 @@ export default defineConfig({
   server: {
     proxy: {
       "/backend-api": {
-        target: 'https://manflix-bruno-f5aedufgd4hphse5.westus3-01.azurewebsites.net',
+        target: 'http://127.0.0.1:8081',
         secure: false,
         changeOrigin: true,
         rewrite: (path)=> path.replace(/^\/backend-api/,"")
